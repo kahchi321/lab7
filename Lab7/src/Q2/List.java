@@ -32,6 +32,49 @@ public class List<E> {
           size++;
       }
       
+      public void removeElement(E e){
+          Node<E> current=head;
+          Node<E> temp;
+          for(int i=0;i<size;i++){
+              if(current.next.element.equals(e)){
+                  temp=current.next.next;
+                  current.next=temp;}
+                  current=current.next;
+              }     
+          }
       
+      public void printList(){
+          Node<E> current=head;
+          for(int i=0; i<size;i++){
+              System.out.print(current.element);
+              if(i<size-1)
+                  System.out.print(", ");
+              current=current.next;
+      }}
+
+    public int getSize() {
+        return size;
+    }
+      
+     public boolean contains(E e){
+          boolean a=false;
+          Node<E> current= head;
+          for(int i=1;i<size;i++){
+              if(current.element.equals(e))
+                  a=true;
+              current=current.next;
+          }
+          return a;
+      }
+     
+     public void replace(E e, E newE){
+         Node<E> current=head;
+         for(int i=0;i<size;i++){
+              if(current.element.equals(e)){
+                  current.element=newE; 
+              } 
+              current=current.next;
+     }}
+
 
 }
