@@ -32,11 +32,11 @@ public class List<E> {
           size++;
       }
       
-      public void removeElement(E e){
+      public void removeElement(E e){      
           Node<E> current=head;
           Node<E> temp;
-          for(int i=0;i<size;i++){
-              if(current.next.element.equals(e)){
+          for(int i=0;i<size-1;i++){
+              if((current.next).element.equals(e)){
                   temp=current.next.next;
                   current.next=temp;}
                   current=current.next;
